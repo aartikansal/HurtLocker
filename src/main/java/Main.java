@@ -1,4 +1,7 @@
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.IOUtils;
+import java.io.IOException;
+
 
 public class Main {
 
@@ -10,8 +13,13 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
         String output = (new Main()).readRawDataToString();
-        String parsed =(new JerkSONParser(output)).parse();
-        System.out.println(parsed);
+        System.out.println(output);
+
+       JerkSONParser jerksonParser = new JerkSONParser();
+        String report = jerksonParser.parse(output);
+        System.out.println(report);
+
+
 
     }
 }
